@@ -1,0 +1,128 @@
+    	body{
+    		padding-top: 20px;
+    		background-color: #f0f0f0;
+    	}
+
+       .logo{
+       		text-align: center;
+       		font-size: 28px;
+       }
+
+       .logo a {
+       		text-decoration: none;    		
+    		color: maroon;
+    		font-weight: bold;
+    	}
+
+    	form{
+    		 background: white;
+			 -moz-box-shadow: 0 0 8px #88d5e9;
+			 -webkit-box-shadow: 0 0 8px #88d5e9;
+			 box-shadow: 0 0 8px #88d5e9;
+			 border: 1px solid #88d5e9;
+			 border-radius: 5px 5px 5px;
+			 padding: 20px;
+			 width: 350px;			 
+			 margin: auto;			 			 
+    	}
+
+    	label{
+    		text-align: right;
+    		padding: 5px;
+       	}
+
+    	input {
+    	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	border: 2px solid #bebebe;
+	padding: 8px;
+	margin-top: 8px;
+	margin-bottom:  8px;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	outline: none;
+	width: 100%;
+}
+
+input:focus{
+-moz-box-shadow: 0 0 8px #88d5e9;
+-webkit-box-shadow: 0 0 8px #88d5e9;
+box-shadow: 0 0 8px #88d5e9;
+border: 1px solid #88d5e9;
+}
+
+input:hover{
+-moz-box-shadow: 0 0 8px #88d5e9;
+-webkit-box-shadow: 0 0 8px #88d5e9;
+box-shadow: 0 0 8px #88d5e9;
+border: 1px solid #88d5e9;
+}
+
+.playbtn{
+	width:100%;
+	margin-top: 5px;
+	padding: 8px;
+	text-align: center;
+	font-weight: bold;
+	color:white;
+	background-color: green;
+	border: none;
+	border-radius: 5px 5px 5px;
+} 
+
+#secondField{
+	display: none;
+}
+
+.playAgainbtn{
+	width:100%;
+	margin-top: 5px;
+	padding: 8px;
+	text-align: center;
+	font-weight: bold;
+	color:white;
+	background-color: green;
+	border: none;		
+	border-radius: 5px 5px 5px;
+}
+
+footer{
+	display: block;
+	position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #8b8b8b;
+    color: white;
+    text-align: center;
+
+}
+
+footer ul{
+	list-style-type: none;
+	text-decoration: none;
+}
+
+footer ul li{
+	float: left;
+	padding: 5px;
+}
+
+footer ul li a{
+	text-decoration: none;
+	color: black;
+}
+
+.fl{
+	float: right;
+}
+
+.guesses{
+	color:gray;
+}   
+.reward{
+	color:blue;
+}
