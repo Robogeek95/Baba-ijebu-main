@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Page Title</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="style.css">
+
+
+
+	<script type="text/javascript">
+
+
+
+		//checks matches from guess number and random number
+		var matches = [];
+		function getMatch(a, b) {
+
+			for (var i = 0; i < a.length; i++) {
+				for (var e = 0; e < b.length; e++) {
+					if (a[i] === b[e]) matches.push(a[i]);
+
+				}
+
+			}
+			showMatches()
+		}
+
+		//Displays number of correct guesses
+		function showMatches() {
+			for (var i = 0; i < matches.length; i++) {
+				console.log(matches.length);
+
+			}
+			results();
+		}
+
+		//prompts user to guess numbers
+		let guessArray = [];
+		function guesses(a) {
+			for (var i = 0; i < a; i++) {
+				let currentGuess = prompt("Guess a number");
+				guessArray.push(currentGuess);
+			}
+			showGuess();
+
+		}
+
+		//Shows guess by user
+		function showGuess() {
+			for (var i = 0; i < guessArray.length; i++) {
+				document.querySelector(".t2").innerHTML = guessArray;
+
+			}
+
+		}
+
+		//random numbers by computer
+		let randomArray = [];
+		function randomNumbers(a) {
+			for (var i = 0; i < a; i++) {
+				let randomNumber = Math.floor(Math.random() * 100);
+				randomArray.push(randomNumber.toString());
+			}
+			showRandomNumbers();
+		}
+
+		//Shows random numbers by computer
+		function showRandomNumbers() {
+			for (var i = 0; i < randomArray.length; i++) {
+				console.log(randomArray[i]);
+				document.querySelector(".t1").innerHTML = randomArray;
+
+			}
+		}
+
+
+		function results() {
+
+			if (matches.length == 5) {
+				let guesses = "You Had all guesses right"
+				let reward = "You've won 20million naira and a trip to Dubai"
+				document.getElementById("guesses").innerHTML = guesses;
+				document.getElementById("reward").innerHTML = reward;
+			}
+			if (matches.length == 3 || matches.length == 4) {
+				let guesses = "You Had " + matches.length + " guesses right"
+				let reward = "You've won 15million naira and a trip to Calabar"
+				document.getElementById("guesses").innerHTML = guesses;
+				document.getElementById("reward").innerHTML = reward;
+			}
+			if (matches.length == 2) {
+				let guesses = "You Had " + matches.length + " guesses right"
+				let reward = "You've won 10million naira and a night at hi-impact"
+				document.getElementById("guesses").innerHTML = guesses;
+				document.getElementById("reward").innerHTML = reward;
+			}
+			if (matches.length == 1) {
+				let guesses = "You Had " + matches.length + " guesses right"
+				let reward = "You've won 1million naira"
+				document.getElementById("guesses").innerHTML = guesses;
+				document.getElementById("reward").innerHTML = reward;
+			}
+			if (matches.length == 0) {
+				let guesses = "You didn't meet any of our conditions";
+				let reward = "We're sorry Baba-Ijebu is not your way"
+				document.getElementById("guesses").innerHTML = guesses;
+				document.getElementById("reward").innerHTML = reward;
+			}
+		}
+
+
+
+
+
+		function ClearForm() {
+			document.getElementById('firstField').style.display = "none";
+			document.getElementById('secondField').style.display = "block";
+			document.getElementById("welName").style.display = "block"
+		}
+
+		function GetUsername() {
+			let name = document.getElementById('Username').value;
+			console.log(name)
+			//document.getElementById("form").submit();
+			document.getElementById("welName").innerHTML = name + " your game results";
+		}
+
+		function playGame() {
+			GetUsername();
+			ClearForm();
+			//results();
+			randomNumbers(5);
+			guesses(5); ''
+			getMatch(randomArray, guessArray);
+		}
+
+		function playAgain() {
+			document.getElementById('firstField').style.display = "block";
+			document.getElementById('secondField').style.display = "none";
+			document.getElementById("welName").style.display = "none";
+		}
+
+	</script>
+
+	<body>
+
+		<head>
+			<p class="logo">
+				<a href="#">LASUCODES/></a>
+			</p>
+			<p class="logo">Virtual Baba-Ijebu</p>
+		</head>
+		<main>
+			<form>
+				<div id="firstField">
+					<label for="Username">Username or email address
+						<br>
+						<input type="email" name="Username" id="Username" required>
+					</label>
+					<br>
+					<label for="Password">Password
+						<br>
+						<input type="password" name="password" required>
+					</label>
+					<br>
+					<input id="Username" class="playbtn" type="button" onclick="playGame()" value='Play Game' />
+				</div>
+
+				<h1 id="welName"></h1>
+				<hr>
+
+
+				<div id="secondField">
+					<table>
+						<th class="th1">Lucky Number</th>
+						<th class="th2">Your Guess</th>
+						<tr>
+							<td class="t1">Lukman</td>
+							<td class="t2">phawazzy</td>
+						</tr>
+					</table>
+					<p id="guesses"></p>
+					<h1 id="reward"></h1>
+					<button class="playAgainbtn" onclick="playAgain()">Play Again</button>
+				</div>
+			</form>
+
+		</main>
+		<footer>
+			<ul>
+				<li>
+					<a href="#">LasuCodes</a>
+				</li>
+				<li>
+					<a href="#">Terms and conditions</a>
+				</li>
+				<li>
+					<a href="#">Privacy</a>
+				</li>
+				<li>
+					<a href="#">Help</a>
+				</li>
+				<li>
+					<a href="#">Feedback</a>
+				</li>
+				<li class="fl">
+					<a href="#">© 2018 Virtual Baba-Ijebu</a>
+				</li>
+		</footer>
+
+	</body>
